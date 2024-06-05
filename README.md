@@ -13,4 +13,3 @@ and determines which player is next to make a move for each game (player 'X' or 
 ```
 gradlew build
 ```
-The built artifact is in ./build/distributions/TicTacToe-1.0-SNAPSHOT.tar
