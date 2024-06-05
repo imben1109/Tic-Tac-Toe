@@ -2,7 +2,6 @@ package tictactoe;
 
 import java.io.*;
 import java.nio.file.*;
-import java.util.Locale;
 import java.util.Scanner;
 
 import static tictactoe.CompletedGamesAnalysis.generateCompletedGamesReport;
