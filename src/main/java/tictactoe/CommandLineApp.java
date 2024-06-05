@@ -10,6 +10,9 @@ import static tictactoe.CompletedGamesAnalysis.generateCompletedGamesReport;
 public class CommandLineApp {
     private File tempGamesInputFile;
 
+    /**
+     * Command Line User Interface for Tic Tac Toe Analysis
+     */
     public CommandLineApp() {
         InputStream incompleteGames = this.getClass().getResourceAsStream("/incompleted_games.txt");
         File file = null;
@@ -25,6 +28,9 @@ public class CommandLineApp {
         }
     }
 
+    /**
+     * print Help
+     */
     public void printHelp() {
         System.out.println(
                 "Please enter following command or Board State (e.g. =========) for analysis.\n" +
@@ -34,6 +40,9 @@ public class CommandLineApp {
         );
     }
 
+    /**
+     * print completed games report
+     */
     public void printCompletedGamesReport() {
         try (InputStream is = new FileInputStream(tempGamesInputFile)) {
             CompletedGamesReport report = generateCompletedGamesReport(is);
@@ -44,8 +53,11 @@ public class CommandLineApp {
     }
 
 
-
-
+    /**
+     * Determine Board State
+     *      if game is completed, it prints winner.
+     *      if game is not completed, it prints winner for next game.
+     */
     public void determineBoardState(String line) {
         try {
             BoardState boardState = new BoardState(line);

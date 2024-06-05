@@ -1,5 +1,8 @@
 package tictactoe;
 
+/**
+ * Represents Board State
+ */
 public class BoardState {
     private String line;
 
@@ -15,6 +18,10 @@ public class BoardState {
         this.line = line;
     }
 
+    /**
+     * get winner
+     * @return winner   null if no winner
+     */
     public Player getWinner() {
         Player winner = getHorizontalWinner();
         if (winner == null) {
@@ -26,6 +33,10 @@ public class BoardState {
         return winner;
     }
 
+    /**
+     * get next player
+     * @return next player
+     */
     public Player getNextPlayer() {
         int numberOfX = 0;
         int numberOfO = 0;
@@ -39,6 +50,10 @@ public class BoardState {
         return numberOfO > numberOfX ? Player.X : Player.O;
     }
 
+    /**
+     * get next winner
+     * @return next winner  null if no next winner
+     */
     public Player getNextWinner() {
         Player nextPlayer = getNextPlayer();
         for (int i = 0; i < line.length(); i++) {
@@ -52,6 +67,9 @@ public class BoardState {
         return null;
     }
 
+    /**
+     * is current game completed
+     */
     public boolean isCompletedGame() {
         if (getWinner() != null) {
             return true;
