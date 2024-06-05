@@ -3,6 +3,9 @@ package tictactoe
 import java.io.File
 import java.util.*
 
+/**
+ * Command Line User Interface for Tic Tac Toe Analysis
+ */
 class CommandLineApp {
     private val tempGamesInputFile: File
 
@@ -16,6 +19,9 @@ class CommandLineApp {
         tempGamesInputFile = file
     }
 
+    /**
+     * print Help
+     */
     fun printHelp() {
         println("""
             Please enter following command or Board State (e.g. =========) for analysis.
@@ -24,7 +30,10 @@ class CommandLineApp {
             EXIT            Exit
         """.trimIndent())
     }
-    
+
+    /**
+     * print completed games report
+     */
     fun printCompletedGamesReport() {
         tempGamesInputFile.inputStream().use {
             val report = generateCompletedGamesReport(it)
@@ -32,7 +41,12 @@ class CommandLineApp {
         }
     }
 
-    fun analyzeBoardState(line: String) {
+    /**
+     * Determine Board State
+     *      if game is completed, it prints winner.
+     *      if game is not completed, it prints winner for next game.
+     */
+    fun determineBoardState(line: String) {
         try {
             val boardState = BoardState(line)
             val isCompletedGame = boardState.isCompletedGame()
@@ -68,7 +82,7 @@ fun main() {
             "EXIT" -> return
             "" -> app.printHelp()
             "HELP" -> app.printHelp()
-            else -> app.analyzeBoardState(line)
+            else -> app.determineBoardState(line)
         }
     }
 }

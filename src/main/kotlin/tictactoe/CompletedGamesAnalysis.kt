@@ -2,9 +2,14 @@ package tictactoe
 
 import java.io.InputStream
 
-fun generateCompletedGamesReport(inputStream: InputStream): CompletedGameReport {
-    var numberOfOWinner = 0;
-    var numberOfXWinner = 0;
+/**
+ * static method to generate completed game report
+ *
+ * @return completed games report
+ */
+fun generateCompletedGamesReport(inputStream: InputStream): CompletedGamesReport {
+    var numberOfOWinner = 0
+    var numberOfXWinner = 0
     var numberOfDraw = 0
     inputStream.bufferedReader().forEachLine { line ->
         if (line.isNotEmpty()){
@@ -16,7 +21,7 @@ fun generateCompletedGamesReport(inputStream: InputStream): CompletedGameReport 
         }
     }
 
-    return CompletedGameReport(
+    return CompletedGamesReport(
         numberOfXWinner, numberOfOWinner, numberOfDraw
     )
 }

@@ -1,6 +1,9 @@
 package tictactoe
 
-data class CompletedGameReport(
+/**
+ * Completed Games Report
+ */
+data class CompletedGamesReport(
     val numberOfXWinner: Int,
     val numberOfOWinner: Int,
     val numberOfDraw: Int

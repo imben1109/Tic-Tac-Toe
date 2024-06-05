@@ -38,7 +38,7 @@ class CommandLineAppTest {
             HELP            HELP
             EXIT            Exit
             
-        """.trimIndent(), outputStreamCaptor.toString());
+        """.trimIndent(), outputStreamCaptor.toString())
     }
 
     @Test
@@ -51,7 +51,7 @@ class CommandLineAppTest {
             Player O: 2 
             Draw: 65 
             
-        """.trimIndent(), outputStreamCaptor.toString());
+        """.trimIndent(), outputStreamCaptor.toString())
     }
 
     @ParameterizedTest
@@ -62,7 +62,7 @@ class CommandLineAppTest {
         "XOXOXOXO=,This game is completed. The winner is player X"
     )
     fun `can analyze board state`(line: String, expected: String){
-        app.analyzeBoardState(line)
-        assertEquals(expected + "\n", outputStreamCaptor.toString());
+        app.determineBoardState(line)
+        assertEquals(expected + "\n", outputStreamCaptor.toString())
     }
 }

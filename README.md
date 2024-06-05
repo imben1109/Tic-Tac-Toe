@@ -2,10 +2,15 @@
 
 ![example.gif](docs%2Fexample.gif)
 
-During startup, App would load resource 
-file ([completed_games.txt](src%2Fmain%2Fresources%2Fcompleted_games.txt)) to 
-temporary file. The temporary file is an external store in case there would be 
-a huge game records.
+Tic-Tac-Toe board state analysis tool. 
+It would help to determine the winner of each game (player 'X', player 'O', or a draw)
+and determines which player is next to make a move for each game (player 'X' or player 'O').
 
-You can eiter enter board state, this application would help to determine 
-the winner of current and next game.
+## Requisite
+* Java 17
+
+## Build
+```
+gradlew build
+```
+The built artifact is in ./build/distributions/TicTacToe-1.0-SNAPSHOT.tar

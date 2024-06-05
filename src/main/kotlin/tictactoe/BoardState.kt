@@ -1,6 +1,9 @@
 package tictactoe
 
 
+/**
+ * Represents Board State
+ */
 class BoardState (private val line: String) {
 
     init {
@@ -12,9 +15,17 @@ class BoardState (private val line: String) {
         }
     }
 
+    /**
+     * get winner
+     * @return winner   null if no winner
+     */
     fun getWinner(): Player? =
         getHorizontalWinner() ?: getVerticalWinner() ?: getDiagonalWinner()
 
+    /**
+     * get next player
+     * @return next player
+     */
     fun getNextPlayer(): Player {
         val numberOfX = line.count{ it == Player.X.charValue}
         val numberOfO = line.count{ it == Player.O.charValue}
@@ -25,6 +36,10 @@ class BoardState (private val line: String) {
         }
     }
 
+    /**
+     * get next winner
+     * @return next winner  null if no next winner
+     */
     fun getNextWinner(): Player? {
         val nextPlayer = getNextPlayer()
 
@@ -40,6 +55,9 @@ class BoardState (private val line: String) {
         return null
     }
 
+    /**
+     * is current game completed
+     */
     fun isCompletedGame(): Boolean {
         if (getWinner() != null ) {
             return true
@@ -52,13 +70,13 @@ class BoardState (private val line: String) {
         for (i in 0..2){
             val horizontal = listOf(line[i*3 + 0], line[i*3 + 1], line[i*3 + 2])
             if (horizontal.count{it == Player.X.charValue } == 3){
-                return Player.X;
+                return Player.X
             }
             if (horizontal.count{it == Player.O.charValue } == 3){
                 return Player.O
             }
         }
-        return null;
+        return null
     }
 
     private fun getVerticalWinner(): Player? {
@@ -71,7 +89,7 @@ class BoardState (private val line: String) {
                 return Player.O
             }
         }
-        return null;
+        return null
     }
 
     private fun getDiagonalWinner() : Player?{
