@@ -9,6 +9,9 @@ import java.util.*
 class CommandLineApp {
     private val tempGamesInputFile: File
 
+    /**
+    * It would create tempoarty file for storing board state in case there are huge number of board state for analysis.
+    */ 
     init {
         val incompleteGames = this::class.java.getResourceAsStream("/incompleted_games.txt")
         val file = File.createTempFile("tictactoe", ".txt")
