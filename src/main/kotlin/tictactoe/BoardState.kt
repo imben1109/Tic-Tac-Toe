@@ -3,6 +3,11 @@ package tictactoe
 
 /**
  * Represents Board State
+ * 
+ *  e.g. XXX00X00X is representing a 3x3 matrix of 
+ *      XXX
+ *      OOX
+ *      OOX
  */
 class BoardState (private val line: String) {
 
