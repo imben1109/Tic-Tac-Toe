@@ -11,6 +11,8 @@ public class CommandLineApp {
 
     /**
      * Command Line User Interface for Tic Tac Toe Analysis
+     *
+     *     It would create tempoarty file for storing board state in case there are huge number of board state for analysis.
      */
     public CommandLineApp() {
         InputStream incompleteGames = this.getClass().getResourceAsStream("/incompleted_games.txt");
