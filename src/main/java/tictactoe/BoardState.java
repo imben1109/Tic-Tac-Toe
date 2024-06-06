@@ -1,7 +1,7 @@
 package tictactoe;
 
 /**
- * Represents Board State
+ * Represents Board State for a Tic Tac Toe Game
  * 
  *  e.g. XXX00X00X is representing a 3x3 matrix of 
  *      XXX
